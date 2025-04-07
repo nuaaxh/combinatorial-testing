@@ -1,0 +1,1404 @@
+=== 测试序列总数量 ===
+300
+
+=== 所有测试序列及其覆盖的排列和Bug状态 ===
+序列 1: ['eb', 'sc_a', 'sc_d', 'sc_m', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 是
+---
+序列 2: ['sc_m', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 3: ['eb', 'sc_m', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 否
+---
+序列 4: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 5: ['eb', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 6: ['sc_a', 'sc_d', 'eb']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 否
+---
+序列 7: ['sc_a', 'sc_m', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('sc_a', 'sc_m'), ('sc_m', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 否
+---
+序列 8: ['sc_m', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 9: ['eb', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 是
+---
+序列 10: ['eb', 'sc_a', 'sc_d', 'sc_a', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 11: ['eb', 'sc_a', 'sc_m', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_m'), ('sc_m', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 否
+---
+序列 12: ['sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 13: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 14: ['eb', 'sc_a', 'sc_d', 'sc_a', 'sc_m', 'sc_d']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'sc_m'), ('sc_m', 'sc_d')]
+是否有Bug: 否
+---
+序列 15: ['eb', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 16: ['eb', 'sc_m', 'eb', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'eb'), ('eb', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 17: ['sc_a', 'sc_d', 'sc_a', 'eb', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 否
+---
+序列 18: ['eb', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 否
+---
+序列 19: ['eb', 'sc_a', 'sc_m', 'sc_d']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_m'), ('sc_m', 'sc_d')]
+是否有Bug: 否
+---
+序列 20: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 21: ['sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 22: ['sc_m', 'sc_a', 'sc_d', 'sc_m', 'sc_a', 'eb']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 否
+---
+序列 23: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 24: ['eb', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 否
+---
+序列 25: ['eb', 'sc_a', 'sc_m', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_m'), ('sc_m', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 否
+---
+序列 26: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 27: ['eb', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 28: ['sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb', 'sc_m']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 否
+---
+序列 29: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 30: ['sc_m', 'sc_a', 'sc_d']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 31: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 32: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 33: ['sc_a', 'sc_d', 'eb']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 否
+---
+序列 34: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 35: ['sc_a', 'sc_d', 'sc_m', 'sc_a', 'eb']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 36: ['eb', 'sc_m', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 否
+---
+序列 37: ['eb', 'sc_a', 'sc_d', 'sc_m', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 是
+---
+序列 38: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 39: ['sc_a', 'sc_d', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 否
+---
+序列 40: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 41: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 42: ['sc_m', 'sc_a', 'sc_d']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 43: ['eb', 'sc_a', 'sc_d', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 44: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 45: ['sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 46: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 47: ['sc_m', 'eb', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('sc_m', 'eb'), ('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 48: ['sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 49: ['eb', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 50: ['sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 51: ['sc_m', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 否
+---
+序列 52: ['eb', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 53: ['sc_m', 'eb', 'sc_a', 'sc_d']
+覆盖的排列: [('sc_m', 'eb'), ('eb', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 54: ['sc_a', 'sc_d', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 否
+---
+序列 55: ['sc_a', 'sc_m', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('sc_a', 'sc_m'), ('sc_m', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 否
+---
+序列 56: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 57: ['eb', 'sc_m', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 否
+---
+序列 58: ['eb', 'sc_a', 'sc_d', 'sc_m', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 是
+---
+序列 59: ['sc_m', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 60: ['eb', 'sc_m', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 否
+---
+序列 61: ['eb', 'sc_m', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 是
+---
+序列 62: ['sc_a', 'sc_d', 'sc_m', 'sc_a', 'eb']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 63: ['eb', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 64: ['eb', 'sc_a', 'sc_d', 'sc_m', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 是
+---
+序列 65: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 66: ['sc_m', 'sc_a', 'sc_d', 'sc_a', 'sc_d']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 67: ['eb', 'sc_a', 'sc_d', 'sc_m', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 是
+---
+序列 68: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 69: ['eb', 'sc_m', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 是
+---
+序列 70: ['eb', 'sc_a', 'sc_d', 'sc_a', 'sc_m', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 否
+---
+序列 71: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 72: ['sc_m', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 否
+---
+序列 73: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 74: ['eb', 'sc_a', 'sc_d', 'sc_m', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 是
+---
+序列 75: ['eb', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 76: ['sc_m', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 77: ['eb', 'sc_a', 'sc_d', 'sc_a', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 78: ['eb', 'sc_m', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 是
+---
+序列 79: ['eb', 'sc_a', 'sc_d', 'sc_m', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 是
+---
+序列 80: ['eb', 'sc_m', 'sc_a', 'sc_m', 'sc_d']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_m'), ('sc_m', 'sc_d')]
+是否有Bug: 否
+---
+序列 81: ['eb', 'sc_a', 'sc_d', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 82: ['eb', 'sc_a', 'sc_d', 'sc_m', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 是
+---
+序列 83: ['eb', 'sc_a', 'sc_d', 'sc_a', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 84: ['sc_m', 'sc_a', 'sc_d']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 85: ['eb', 'sc_a', 'sc_m', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_m'), ('sc_m', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 否
+---
+序列 86: ['sc_m', 'eb', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('sc_m', 'eb'), ('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 87: ['sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 否
+---
+序列 88: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 89: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 90: ['sc_a', 'sc_d', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 否
+---
+序列 91: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 92: ['eb', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 93: ['sc_a', 'sc_d', 'sc_a', 'sc_d']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 94: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 95: ['eb', 'sc_a', 'sc_m', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_m'), ('sc_m', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 否
+---
+序列 96: ['eb', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 97: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_m', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 是
+---
+序列 98: ['eb', 'sc_a', 'sc_d', 'sc_a', 'sc_m', 'sc_d']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'sc_m'), ('sc_m', 'sc_d')]
+是否有Bug: 否
+---
+序列 99: ['sc_a', 'sc_d', 'eb']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 否
+---
+序列 100: ['eb', 'sc_a', 'sc_m', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_m'), ('sc_m', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 否
+---
+序列 101: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 102: ['eb', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 103: ['sc_m', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 否
+---
+序列 104: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 105: ['eb', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 是
+---
+序列 106: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 107: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 108: ['sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 109: ['eb', 'sc_a', 'sc_d', 'sc_m', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 是
+---
+序列 110: ['eb', 'sc_a', 'sc_m', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_m'), ('sc_m', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 否
+---
+序列 111: ['eb', 'sc_m', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 是
+---
+序列 112: ['eb', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 113: ['eb', 'sc_a', 'sc_d', 'sc_m', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 是
+---
+序列 114: ['sc_m', 'eb', 'sc_a', 'sc_d']
+覆盖的排列: [('sc_m', 'eb'), ('eb', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 115: ['eb', 'sc_a', 'sc_d', 'sc_m', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 是
+---
+序列 116: ['eb', 'sc_a', 'sc_d', 'sc_m', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 是
+---
+序列 117: ['sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 118: ['eb', 'sc_a', 'sc_m', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_m'), ('sc_m', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 否
+---
+序列 119: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 120: ['sc_a', 'sc_d', 'sc_m', 'eb']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 是
+---
+序列 121: ['sc_m', 'sc_a', 'eb', 'sc_m']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 否
+---
+序列 122: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 123: ['sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 124: ['sc_a', 'sc_d', 'eb', 'sc_m', 'sc_a', 'sc_d']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 125: ['sc_m', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 126: ['sc_m', 'eb', 'sc_a', 'sc_d']
+覆盖的排列: [('sc_m', 'eb'), ('eb', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 127: ['eb', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 128: ['sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 129: ['sc_a', 'sc_d', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 否
+---
+序列 130: ['sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 131: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 132: ['sc_m', 'sc_a', 'sc_d']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 133: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 134: ['eb', 'sc_a', 'sc_m', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_m'), ('sc_m', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 否
+---
+序列 135: ['eb', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 136: ['eb', 'sc_a', 'sc_d', 'sc_m', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 是
+---
+序列 137: ['eb', 'sc_a', 'sc_d', 'sc_m', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 是
+---
+序列 138: ['sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 139: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 140: ['sc_a', 'sc_d', 'sc_m', 'eb']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 是
+---
+序列 141: ['sc_a', 'sc_m', 'sc_d']
+覆盖的排列: [('sc_a', 'sc_m'), ('sc_m', 'sc_d')]
+是否有Bug: 否
+---
+序列 142: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 143: ['sc_m', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 144: ['eb', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 是
+---
+序列 145: ['sc_m', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 146: ['eb', 'sc_a', 'sc_d', 'sc_m', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 147: ['eb', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 否
+---
+序列 148: ['eb', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 149: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 150: ['sc_m', 'sc_a', 'eb']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 否
+---
+序列 151: ['eb', 'sc_a', 'sc_d', 'sc_m', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 是
+---
+序列 152: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 153: ['eb', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 否
+---
+序列 154: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 155: ['eb', 'sc_a', 'sc_d', 'sc_m', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 是
+---
+序列 156: ['sc_m', 'sc_a', 'sc_d', 'sc_a', 'sc_d']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 157: ['eb', 'sc_a', 'sc_d', 'sc_m', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 158: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 159: ['sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 160: ['eb', 'sc_a', 'sc_d', 'sc_a', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 161: ['sc_m', 'eb', 'sc_a', 'sc_m', 'sc_d']
+覆盖的排列: [('sc_m', 'eb'), ('eb', 'sc_a'), ('sc_a', 'sc_m'), ('sc_m', 'sc_d')]
+是否有Bug: 否
+---
+序列 162: ['sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 163: ['eb', 'sc_a', 'sc_m', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_m'), ('sc_m', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 否
+---
+序列 164: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 165: ['eb', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 是
+---
+序列 166: ['sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 167: ['eb', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 168: ['eb', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 169: ['eb', 'sc_a', 'sc_m', 'sc_d']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_m'), ('sc_m', 'sc_d')]
+是否有Bug: 否
+---
+序列 170: ['sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 171: ['sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 172: ['eb', 'sc_m', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 否
+---
+序列 173: ['sc_a', 'sc_d', 'sc_a', 'eb', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 否
+---
+序列 174: ['eb', 'sc_m', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 是
+---
+序列 175: ['eb', 'sc_a', 'sc_d', 'sc_a', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 176: ['sc_m', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 177: ['eb', 'sc_m', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 是
+---
+序列 178: ['eb', 'sc_a', 'sc_d', 'sc_a', 'sc_m', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 否
+---
+序列 179: ['sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 180: ['eb', 'sc_a', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 否
+---
+序列 181: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 182: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 183: ['sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 否
+---
+序列 184: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 185: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 186: ['sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 187: ['eb', 'sc_a', 'sc_d', 'sc_a', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 188: ['sc_m', 'sc_a', 'sc_d', 'sc_m', 'eb']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 否
+---
+序列 189: ['sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 190: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 191: ['eb', 'sc_a', 'sc_d', 'sc_a', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 192: ['sc_m', 'sc_a', 'sc_d']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 193: ['sc_m', 'sc_a', 'sc_d', 'sc_m', 'eb']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 否
+---
+序列 194: ['eb', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 195: ['sc_m', 'sc_a', 'sc_d', 'sc_a', 'sc_d']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 196: ['eb', 'sc_a', 'sc_d', 'sc_a', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 197: ['sc_m', 'eb', 'sc_a', 'sc_d']
+覆盖的排列: [('sc_m', 'eb'), ('eb', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 198: ['sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 199: ['eb', 'sc_a', 'sc_d', 'sc_a', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 200: ['eb', 'sc_m', 'sc_a', 'sc_m', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 否
+---
+序列 201: ['sc_m', 'sc_a', 'sc_d']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 202: ['sc_a', 'sc_d', 'sc_m', 'sc_a', 'eb']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 203: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 204: ['sc_m', 'sc_a', 'eb']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 否
+---
+序列 205: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 206: ['eb', 'sc_a', 'sc_d', 'sc_m', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 是
+---
+序列 207: ['sc_m', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 否
+---
+序列 208: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 209: ['sc_a', 'sc_m', 'sc_d', 'eb']
+覆盖的排列: [('sc_a', 'sc_m'), ('sc_m', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 否
+---
+序列 210: ['sc_a', 'sc_d', 'sc_m', 'eb']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 是
+---
+序列 211: ['eb', 'sc_a', 'sc_d', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 212: ['sc_m', 'sc_a', 'sc_d', 'sc_m', 'eb']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 否
+---
+序列 213: ['sc_a', 'eb', 'sc_m']
+覆盖的排列: [('sc_a', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 214: ['sc_m', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 215: ['sc_m', 'eb', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('sc_m', 'eb'), ('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 216: ['sc_a', 'sc_d', 'sc_a', 'eb', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 否
+---
+序列 217: ['eb', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 218: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_m', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 是
+---
+序列 219: ['sc_m', 'sc_a', 'sc_d', 'sc_a', 'sc_d']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 220: ['eb', 'sc_a', 'sc_d', 'sc_a', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 221: ['sc_m', 'eb', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('sc_m', 'eb'), ('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 222: ['eb', 'sc_m', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 是
+---
+序列 223: ['sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 224: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 225: ['sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 226: ['sc_m', 'sc_a', 'sc_d', 'sc_m', 'eb']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 否
+---
+序列 227: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 228: ['eb', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 是
+---
+序列 229: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 230: ['eb', 'sc_a', 'sc_m', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_m'), ('sc_m', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 否
+---
+序列 231: ['sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 232: ['sc_a', 'sc_d', 'sc_a', 'eb', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 否
+---
+序列 233: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 234: ['sc_m', 'eb', 'sc_a', 'sc_d']
+覆盖的排列: [('sc_m', 'eb'), ('eb', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 235: ['eb', 'sc_a', 'sc_d', 'sc_a', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 236: ['sc_m', 'sc_a', 'sc_d', 'sc_m', 'eb']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 否
+---
+序列 237: ['eb', 'sc_m', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 是
+---
+序列 238: ['eb', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 否
+---
+序列 239: ['sc_m', 'eb', 'sc_a', 'sc_m', 'sc_d']
+覆盖的排列: [('sc_m', 'eb'), ('eb', 'sc_a'), ('sc_a', 'sc_m'), ('sc_m', 'sc_d')]
+是否有Bug: 否
+---
+序列 240: ['eb', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 241: ['eb', 'sc_a', 'sc_m', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_m'), ('sc_m', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 否
+---
+序列 242: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 243: ['sc_a', 'sc_d', 'eb']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 否
+---
+序列 244: ['sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb', 'sc_m']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 否
+---
+序列 245: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 246: ['eb', 'sc_m', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 是
+---
+序列 247: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 248: ['eb', 'sc_a', 'sc_d', 'sc_m', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 是
+---
+序列 249: ['sc_m', 'sc_a', 'sc_d', 'sc_a', 'sc_d']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 250: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 251: ['eb', 'sc_a', 'sc_d', 'sc_a', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 252: ['sc_m', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 否
+---
+序列 253: ['sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 254: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 255: ['eb', 'sc_m', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 否
+---
+序列 256: ['eb', 'sc_a', 'sc_m', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_m'), ('sc_m', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 否
+---
+序列 257: ['eb', 'sc_a', 'sc_d', 'sc_m', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 258: ['eb', 'sc_m', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 否
+---
+序列 259: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 260: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 261: ['sc_a', 'eb', 'sc_m']
+覆盖的排列: [('sc_a', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 262: ['eb', 'sc_a', 'sc_d', 'sc_a', 'sc_m', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 否
+---
+序列 263: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 264: ['sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 265: ['sc_a', 'sc_d', 'sc_a', 'eb', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 否
+---
+序列 266: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 267: ['sc_m', 'eb', 'sc_a', 'sc_d']
+覆盖的排列: [('sc_m', 'eb'), ('eb', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 268: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_m', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 是
+---
+序列 269: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 270: ['eb', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 271: ['sc_m', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 272: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 273: ['sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 274: ['eb', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 275: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 276: ['sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 277: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 278: ['sc_m', 'eb', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('sc_m', 'eb'), ('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 279: ['eb', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 否
+---
+序列 280: ['sc_m', 'eb', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('sc_m', 'eb'), ('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 281: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 282: ['sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 283: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 284: ['eb', 'sc_a', 'sc_m', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_m'), ('sc_m', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 否
+---
+序列 285: ['sc_a', 'sc_d', 'sc_m', 'eb']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'eb')]
+是否有Bug: 是
+---
+序列 286: ['sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 287: ['eb', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 288: ['sc_a', 'sc_d', 'sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 否
+---
+序列 289: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 290: ['eb', 'sc_a', 'sc_d', 'sc_m', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 是
+---
+序列 291: ['sc_m', 'eb', 'sc_a', 'sc_d']
+覆盖的排列: [('sc_m', 'eb'), ('eb', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 否
+---
+序列 292: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 293: ['sc_a', 'sc_d', 'sc_a', 'eb', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 否
+---
+序列 294: ['eb', 'sc_m', 'sc_a', 'sc_d']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d')]
+是否有Bug: 是
+---
+序列 295: ['sc_m', 'sc_a', 'sc_d', 'sc_m', 'sc_a', 'eb']
+覆盖的排列: [('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 否
+---
+序列 296: ['eb', 'sc_a', 'sc_d', 'eb', 'sc_m']
+覆盖的排列: [('eb', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb'), ('eb', 'sc_m')]
+是否有Bug: 是
+---
+序列 297: ['sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+序列 298: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'eb')]
+是否有Bug: 是
+---
+序列 299: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+覆盖的排列: [('eb', 'sc_m'), ('sc_m', 'sc_a'), ('sc_a', 'sc_d'), ('sc_d', 'sc_a'), ('sc_a', 'eb')]
+是否有Bug: 是
+---
+序列 300: ['sc_a', 'sc_d', 'sc_m']
+覆盖的排列: [('sc_a', 'sc_d'), ('sc_d', 'sc_m')]
+是否有Bug: 是
+---
+
+=== 所有发现的Bug详情 ===
+Bug 1:
+原始序列: ['eb', 'sc_a', 'sc_d', 'sc_a', 'eb', 'sc_m']
+修改后序列: ['eb', 'sc_a', 'sc_d', 'sc_a', 'A_dz', 'eb', 'sc_m']
+插入位置: 4
+插入输入: A_dz
+---
+Bug 2:
+原始序列: ['sc_m', 'sc_a', 'sc_d', 'eb']
+修改后序列: ['sc_m', 'A_dz', 'sc_a', 'sc_d', 'eb']
+插入位置: 1
+插入输入: A_dz
+---
+Bug 3:
+原始序列: ['eb', 'sc_a', 'sc_d', 'sc_a', 'sc_d', 'sc_m']
+修改后序列: ['eb', 'sc_a', 'sc_d', 'sc_a', 'A_dz', 'sc_d', 'sc_m']
+插入位置: 4
+插入输入: A_dz
+---
+Bug 4:
+原始序列: ['eb', 'sc_a', 'sc_d', 'sc_a', 'eb', 'sc_m']
+修改后序列: ['eb', 'sc_a', 'sc_d', 'sc_a', 'eb', 'A_dz', 'sc_m']
+插入位置: 5
+插入输入: A_dz
+---
+Bug 5:
+原始序列: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb', 'sc_m']
+修改后序列: ['eb', 'sc_m', 'sc_a', 'A_dz', 'sc_d', 'eb', 'sc_m']
+插入位置: 3
+插入输入: A_dz
+---
+Bug 6:
+原始序列: ['eb', 'sc_a', 'sc_d', 'sc_m']
+修改后序列: ['eb', 'A_dz', 'sc_a', 'sc_d', 'sc_m']
+插入位置: 1
+插入输入: A_dz
+---
+Bug 7:
+原始序列: ['eb', 'sc_a', 'sc_d']
+修改后序列: ['eb', 'A_dz', 'sc_a', 'sc_d']
+插入位置: 1
+插入输入: A_dz
+---
+Bug 8:
+原始序列: ['sc_a', 'sc_d', 'eb', 'sc_m']
+修改后序列: ['sc_a', 'A_dz', 'sc_d', 'eb', 'sc_m']
+插入位置: 1
+插入输入: A_dz
+---
+Bug 9:
+原始序列: ['eb', 'sc_a', 'sc_d', 'sc_m', 'eb']
+修改后序列: ['eb', 'A_dz', 'sc_a', 'sc_d', 'sc_m', 'eb']
+插入位置: 1
+插入输入: A_dz
+---
+Bug 10:
+原始序列: ['eb', 'sc_m', 'sc_a', 'sc_d']
+修改后序列: ['eb', 'A_dz', 'sc_m', 'sc_a', 'sc_d']
+插入位置: 1
+插入输入: A_dz
+---
+Bug 11:
+原始序列: ['eb', 'sc_a', 'sc_d', 'eb', 'sc_m']
+修改后序列: ['eb', 'sc_a', 'sc_d', 'eb', 'A_dz', 'sc_m']
+插入位置: 4
+插入输入: A_dz
+---
+Bug 12:
+原始序列: ['eb', 'sc_a', 'sc_d', 'sc_m', 'sc_a', 'sc_d']
+修改后序列: ['eb', 'sc_a', 'A_dz', 'sc_d', 'sc_m', 'sc_a', 'sc_d']
+插入位置: 2
+插入输入: A_dz
+---
+Bug 13:
+原始序列: ['sc_a', 'sc_d', 'eb', 'sc_m']
+修改后序列: ['sc_a', 'sc_d', 'A_dz', 'eb', 'sc_m']
+插入位置: 2
+插入输入: A_dz
+---
+Bug 14:
+原始序列: ['sc_m', 'sc_a', 'sc_d', 'eb', 'sc_m']
+修改后序列: ['sc_m', 'sc_a', 'A_dz', 'sc_d', 'eb', 'sc_m']
+插入位置: 2
+插入输入: A_dz
+---
+Bug 15:
+原始序列: ['eb', 'sc_a', 'sc_d', 'sc_m', 'sc_a', 'eb']
+修改后序列: ['eb', 'sc_a', 'A_dz', 'sc_d', 'sc_m', 'sc_a', 'eb']
+插入位置: 2
+插入输入: A_dz
+---
+Bug 16:
+原始序列: ['sc_a', 'sc_d', 'sc_m']
+修改后序列: ['sc_a', 'sc_d', 'A_dz', 'sc_m']
+插入位置: 2
+插入输入: A_dz
+---
+Bug 17:
+原始序列: ['sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+修改后序列: ['sc_m', 'sc_a', 'sc_d', 'sc_a', 'A_dz', 'eb']
+插入位置: 4
+插入输入: A_dz
+---
+Bug 18:
+原始序列: ['eb', 'sc_m', 'sc_a', 'sc_d']
+修改后序列: ['eb', 'sc_m', 'A_dz', 'sc_a', 'sc_d']
+插入位置: 2
+插入输入: A_dz
+---
+Bug 19:
+原始序列: ['sc_a', 'sc_d', 'sc_m', 'sc_a', 'eb']
+修改后序列: ['sc_a', 'sc_d', 'sc_m', 'A_dz', 'sc_a', 'eb']
+插入位置: 3
+插入输入: A_dz
+---
+Bug 20:
+原始序列: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_m']
+修改后序列: ['eb', 'sc_m', 'sc_a', 'sc_d', 'A_dz', 'sc_m']
+插入位置: 4
+插入输入: A_dz
+---
+Bug 21:
+原始序列: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+修改后序列: ['eb', 'A_dz', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+插入位置: 1
+插入输入: A_dz
+---
+Bug 22:
+原始序列: ['sc_a', 'sc_d', 'sc_m', 'eb']
+修改后序列: ['sc_a', 'A_dz', 'sc_d', 'sc_m', 'eb']
+插入位置: 1
+插入输入: A_dz
+---
+Bug 23:
+原始序列: ['eb', 'sc_m', 'sc_a', 'sc_d']
+修改后序列: ['eb', 'A_dz', 'sc_m', 'sc_a', 'sc_d']
+插入位置: 1
+插入输入: A_dz
+---
+Bug 24:
+原始序列: ['sc_a', 'eb', 'sc_m']
+修改后序列: ['sc_a', 'eb', 'A_dz', 'sc_m']
+插入位置: 2
+插入输入: A_dz
+---
+Bug 25:
+原始序列: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb']
+修改后序列: ['eb', 'A_dz', 'sc_m', 'sc_a', 'sc_d', 'eb']
+插入位置: 1
+插入输入: A_dz
+---
+Bug 26:
+原始序列: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb', 'sc_m']
+修改后序列: ['eb', 'sc_m', 'sc_a', 'sc_d', 'eb', 'A_dz', 'sc_m']
+插入位置: 5
+插入输入: A_dz
+---
+Bug 27:
+原始序列: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_m', 'eb']
+修改后序列: ['eb', 'A_dz', 'sc_m', 'sc_a', 'sc_d', 'sc_m', 'eb']
+插入位置: 1
+插入输入: A_dz
+---
+Bug 28:
+原始序列: ['sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+修改后序列: ['sc_m', 'sc_a', 'A_dz', 'sc_d', 'sc_a', 'eb']
+插入位置: 2
+插入输入: A_dz
+---
+Bug 29:
+原始序列: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+修改后序列: ['eb', 'sc_m', 'sc_a', 'A_dz', 'sc_d', 'sc_a', 'eb']
+插入位置: 3
+插入输入: A_dz
+---
+Bug 30:
+原始序列: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+修改后序列: ['eb', 'sc_m', 'A_dz', 'sc_a', 'sc_d', 'sc_a', 'eb']
+插入位置: 2
+插入输入: A_dz
+---
+Bug 31:
+原始序列: ['sc_m', 'eb', 'sc_a', 'sc_d', 'sc_m']
+修改后序列: ['sc_m', 'eb', 'A_dz', 'sc_a', 'sc_d', 'sc_m']
+插入位置: 2
+插入输入: A_dz
+---
+Bug 32:
+原始序列: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+修改后序列: ['eb', 'sc_m', 'A_dz', 'sc_a', 'sc_d', 'sc_a', 'eb']
+插入位置: 2
+插入输入: A_dz
+---
+Bug 33:
+原始序列: ['eb', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+修改后序列: ['eb', 'A_dz', 'sc_m', 'sc_a', 'sc_d', 'sc_a', 'eb']
+插入位置: 1
+插入输入: A_dz
+---
