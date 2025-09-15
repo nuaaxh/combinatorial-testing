@@ -1,12 +1,21 @@
 import random
 from itertools import permutations
 from collections import defaultdict, deque
-from typing import Sequence
-from itertools import product
-from hashlib import sha256
 import time
 from statistics import mean
-from collections import OrderedDict
+import copy
+from typing import List, Tuple, Set
+import matplotlib.pyplot as plt
+import random
+from itertools import permutations
+from collections import defaultdict, deque
+import time
+import multiprocessing
+import gc
+import random
+import time
+from collections import defaultdict
+from statistics import mean
 import copy
 
 class MealyNFA:
@@ -59,6 +68,8 @@ class MealyNFA:
 
             for a in self.inputs:
                 transitions = self.transition_func[current].get(a, [])
+                if not transitions:
+                    continue  # 避免空列表
                 for (output, next_state) in transitions:
                     if next_state not in visited:
                         new_details = path_details + [(current, a, output, next_state)]
@@ -82,12 +93,16 @@ class MealyNFA:
         current_state = self.current_state
 
         for _ in range(n):
-            available_inputs = list(self.transition_func[current_state].keys())
+            available_inputs = [i for i in self.transition_func[current_state]
+                                if self.transition_func[current_state][i]]
             if not available_inputs:
-                break
+                break  # 当前状态没有可用输入，提前退出
 
             input_symbol = random.choice(available_inputs)
-            output, next_state = random.choice(self.transition_func[current_state][input_symbol])
+            transitions = self.transition_func[current_state][input_symbol]
+            if not transitions:
+                break  # 防止空列表
+            output, next_state = random.choice(transitions)
 
             path_details.append((current_state, input_symbol, output, next_state))
             input_sequence.append(input_symbol)
@@ -232,8 +247,7 @@ def is_subsequence(p, sequence):
 
 class TestGenerator:
     def __init__(self, events, fsm, strength, max_tuples):
-        # 将 events 规范为 set，避免后续 .union / set 运算报错
-        self.I = set(events)
+        self.I = events
         self.F = fsm
         self.t = strength
         self.N = max_tuples
@@ -243,74 +257,132 @@ class TestGenerator:
     def generate_t_perms(self):
         return list(permutations(self.I, self.t))
 
-    def extract_fsm_state(nested_state):
-        """递归提取嵌套状态中的FSM状态"""
-        if isinstance(nested_state, tuple):
-            return extract_fsm_state(nested_state[0])  # 递归解包第一元素
-        elif isinstance(nested_state, str) and nested_state.startswith('S'):  # 判断是否为FSM状态
-            return nested_state
-        else:
-            return None  # 非FSM状态
+    @staticmethod
+    def trim_to_accepting(path_details, accepting_states):
+        """
+        裁剪随机路径，使其最终状态为可接受状态
+        保留到最后一个可接受状态的位置，其后的输入全部删除
+        """
+        last_accept_idx = -1
+        for idx, (_, _, _, next_state) in enumerate(path_details):
+            if next_state in accepting_states:
+                last_accept_idx = idx
+
+        if last_accept_idx == -1:
+            return [], []  # 整条路径未到达接受状态
+
+        trimmed_path = path_details[:last_accept_idx + 1]
+        trimmed_input = [step[1] for step in trimmed_path]
+
+        return trimmed_path, trimmed_input
+
+    def generate_random_tests(self, num_tests=100):
+        """在FSM上随机生成若干条测试用例，裁剪至最后可接受状态"""
+        tests = []
+        for _ in range(num_tests):
+            path_details, input_sequence = self.F.generate_random_path(self.N)
+            path_details, input_sequence = self.trim_to_accepting(path_details, self.F.accepting_states)
+            if input_sequence:  # 保留有效路径
+                tests.append((path_details, input_sequence))
+        return tests
+
+    def get_covered_permutations(self, input_sequence):
+        """计算一个测试用例能覆盖的t-perms"""
+        from itertools import combinations
+        covered = set()
+        n = len(input_sequence)
+        for indices in combinations(range(n), self.t):
+            perm = tuple(input_sequence[i] for i in indices)
+            covered.add(perm)
+        return covered
 
     def generate_test_suite(self):
-        T = self.generate_t_perms()
-        self.TS = []  # 重置测试套件
-        self.TS_detail = []  # 重置详细路径
+        T = set(self.generate_t_perms())  # 所有 t-perms
+        covered = set()
+        self.TS = []
+        self.TS_detail = []
 
-        while T:
+        # 1️⃣ 随机生成候选测试用例（数量可以大一些保证覆盖性）
+        candidate_tests = self.generate_random_tests(num_tests=10 * len(T))
+
+        # 将候选按增量覆盖数量贪心排序
+        while T - covered and candidate_tests:
+            # 对每个候选测试，计算它能覆盖的新排列数
+            best_test = max(candidate_tests,
+                            key=lambda tc: len(self.get_covered_permutations(tc[1]) - covered))
+            candidate_tests.remove(best_test)
+
+            new_cov = self.get_covered_permutations(best_test[1]) - covered
+            if not new_cov:
+                continue  # 这个候选没有增量覆盖，跳过
+
+            # 添加到最终测试套件
+            path_details, test_case = best_test
+            self.TS.append(test_case)
+
+            # 构建详细路径
+            detail_sequence = []
+            for step in path_details:
+                state = step[0]
+                while isinstance(state, tuple):
+                    state = state[0]
+                if isinstance(state, str) and state.startswith('S'):
+                    detail_sequence.extend([state, step[1]])
+            if path_details:
+                final_state = path_details[-1][3]
+                while isinstance(final_state, tuple):
+                    final_state = final_state[0]
+                if isinstance(final_state, str) and final_state.startswith('S'):
+                    detail_sequence.append(final_state)
+            self.TS_detail.append(detail_sequence)
+
+            # 更新已覆盖集合
+            covered |= new_cov
+
+        # 2️⃣ 兜底生成剩余未覆盖排列（如随机生成未覆盖时）
+        remaining_perms = T - covered
+        while remaining_perms:
+            # 这里可以使用原来的组合 FSM 方法兜底
             current_constraints = []
-
-            # 收集约束条件
-            while len(current_constraints) < self.N and T:
-                idx = random.randint(0, len(T)-1)
-                p = T.pop(idx)
+            while len(current_constraints) < self.N and remaining_perms:
+                idx = random.randint(0, len(remaining_perms) - 1)
+                p = list(remaining_perms)[idx]
+                remaining_perms.remove(p)
                 a = build_subsequence_mealy_empty_output(self.I, p)
-
                 if have_intersection(a, self.F):
                     current_constraints.append(a)
-
             if not current_constraints:
                 continue
 
-            # 构建组合自动机
             combined = self.F
             for constraint in current_constraints:
                 combined = multiply(combined, constraint)
 
             try:
                 path_details, test_case = combined.generate_accepting_path()
-                if test_case:  # 确保生成了有效的测试用例
+                if test_case:
                     self.TS.append(test_case)
-
-                    # 处理详细序列
                     detail_sequence = []
                     for step in path_details:
-                        # 提取FSM状态
                         state = step[0]
                         while isinstance(state, tuple):
                             state = state[0]
-
-                        if isinstance(state, str) and state.startswith('S'):
-                            detail_sequence.extend([state, step[1]])
-
-                    # 添加最终状态
+                        detail_sequence.extend([state, step[1]])
                     if path_details:
                         final_state = path_details[-1][3]
                         while isinstance(final_state, tuple):
                             final_state = final_state[0]
-                        if isinstance(final_state, str) and final_state.startswith('S'):
-                            detail_sequence.append(final_state)
-
+                        detail_sequence.append(final_state)
                     self.TS_detail.append(detail_sequence)
 
-                    # 移除已覆盖的排列
-                    T = [p for p in T if not is_subsequence(p, test_case)]
-
+                    covered |= self.get_covered_permutations(test_case)
+                    remaining_perms = T - covered
             except Exception as e:
-                print(f"生成路径时出错: {e}")
+                print(f"兜底生成路径出错: {e}")
                 continue
 
         return self.TS, self.TS_detail
+
 
 class DeltaUpdate:
     def __init__(self, start_state, transitions, end_state):
@@ -337,72 +409,203 @@ class IncrementalTestGenerator(TestGenerator):
         self.original_events = set(original_generator.I)
         self.max_replacements = max_replacements
 
+    # ------------------------
+    # 启发式生成方法
+    # ------------------------
+    def heuristic_completion(self, remaining_perms, num_tests=200):
+        """
+        启发式补全未覆盖排列，随机生成序列并裁剪到接受状态
+        仅保留能带来新增覆盖的测试用例
+        """
+        completed_TS = []
+        completed_detail = []
+        covered = set()
+
+        # 随机生成候选测试
+        candidates = []
+        for _ in range(num_tests):
+            path_details, test_case = self.F.generate_random_path(self.N)
+            path_details, test_case = self.trim_to_accepting(path_details, self.F.accepting_states)
+            if test_case:
+                candidates.append((path_details, test_case))
+
+        # 贪心选择覆盖最多 t-perms 的测试用例
+        while candidates and remaining_perms - covered:
+            # 按新增覆盖数量排序
+            best_test = max(candidates, key=lambda x: len(self.get_covered_permutations(x[1]) - covered))
+            candidates.remove(best_test)
+
+            new_cov = self.get_covered_permutations(best_test[1]) - covered
+            if not new_cov:
+                continue  # 跳过没有新增覆盖的测试用例
+
+            # 添加测试用例
+            path_details, test_case = best_test
+            completed_TS.append(test_case)
+            covered |= new_cov
+
+            # 构建详细序列
+            detail_sequence = []
+            for step in path_details:
+                state = step[0]
+                while isinstance(state, tuple):
+                    state = state[0]
+                if isinstance(state, str) and state.startswith('S'):
+                    detail_sequence.extend([state, step[1]])
+            if path_details:
+                final_state = path_details[-1][3]
+                while isinstance(final_state, tuple):
+                    final_state = final_state[0]
+                if isinstance(final_state, str) and final_state.startswith('S'):
+                    detail_sequence.append(final_state)
+            completed_detail.append(detail_sequence)
+
+            # 一旦覆盖了所有剩余排列，立即返回
+            if remaining_perms <= covered:
+                break
+
+        return completed_TS, completed_detail, covered
+
+    # ------------------------
+    # 增量更新生成测试套件
+    # ------------------------
     def generate_incremental_suite(self):
-        new_TS = []
-        new_TS_detail = []
-        self.remaining_perms = set()
+        """
+        增量测试生成：
+          1) 保留原测试套件
+          2) 在整个套件中只替换一次受 delta 影响的片段（不再做 BFS 可接受性验证）
+          3) 启发式补全覆盖剩余未覆盖的 t-perm（基于更新后的 FSM self.F）
+          4) 若仍有未覆盖 t-perm，则用乘积自动机兜底
+        最终更新 self.TS / self.TS_detail，并返回 self.TS
+        """
+        # 1) 保留原测试套件
+        new_TS = list(self.original_TS)
+        new_TS_detail = list(self.original_TS_detail)
 
-        for tc_input, tc_detail in zip(self.original_TS, self.original_TS_detail):
-            original_covered = self.get_covered_permutations(tc_input)
-            replaced = False
+        # 2) 全局只替换一次受 delta 影响的片段
+        replacements_done = 0
+        max_replacements = getattr(self, "max_replacements", 1)  # 若未设置，默认只替换一次
+        for idx, (old_case, old_detail) in enumerate(zip(self.original_TS, self.original_TS_detail)):
+            if replacements_done >= max_replacements:
+                break
 
-            for start_idx, end_idx in self.find_replacements(tc_detail):
-                new_input, detail_fragment = self.replace_subsequence(tc_input, start_idx, end_idx)
-                accepted, _ = self.F.is_sequence_accepted(new_input)
+            reps = self.find_replacements(old_detail)
+            if not reps:
+                continue
 
-                if accepted:
-                    new_covered = self.get_covered_permutations(new_input)
-                    lost_coverage = original_covered - new_covered
-                    self.remaining_perms.update(lost_coverage)
+            # 只挑一个窗口（这里取第一个；也可 random.choice(reps)）
+            start_idx, end_idx = reps[0]
 
-                    new_detail = (tc_detail[:start_idx*2] +
-                                  detail_fragment +
-                                  tc_detail[end_idx*2+1:])
+            # 直接替换：不再做 is_sequence_accepted 验证（起止状态一致即可衔接）
+            new_input, detail_fragment = self.replace_subsequence(old_case, start_idx, end_idx)
+            new_TS[idx] = new_input
 
-                    new_TS.append(new_input)
-                    new_TS_detail.append(new_detail)
-                    replaced = True
-                    break
+            # 重建 detail：old_detail 是 [state,input,state,input,...,state]
+            new_detail = old_detail[:start_idx * 2] + detail_fragment + old_detail[end_idx * 2 + 1:]
+            new_TS_detail[idx] = new_detail
 
-            if not replaced:
-                new_TS.append(tc_input)
-                new_TS_detail.append(tc_detail)
+            replacements_done += 1
+            if replacements_done >= max_replacements:
+                break
 
-        if self.remaining_perms:
-            supplementary_TS, supplementary_detail = self.generate_remaining_suite(list(self.remaining_perms))
-            new_TS.extend(supplementary_TS)
-            new_TS_detail.extend(supplementary_detail)
+        # 3) 计算覆盖与剩余 t-perm
+        from itertools import permutations as _perms
+        all_t_perms = set(_perms(self.I, self.t))
+        covered = set()
+        for test_case in new_TS:
+            covered |= self.get_covered_permutations(test_case)
+        remaining_perms = all_t_perms - covered
 
-        # --- 兜底校验与补齐 ---
-        need = self._twise_universe()
-        have = self._covered_perms(new_TS)
-        missing = list(need - have)
-        if missing:
-            extra_TS, extra_detail = self.generate_remaining_suite(missing)
-            new_TS.extend(extra_TS)
-            new_TS_detail.extend(extra_detail)
+        # 4) 启发式补全（在更新后的 FSM self.F 上）
+        if remaining_perms:
+            add_TS, add_detail, newly_covered = self.heuristic_completion(remaining_perms)
+            if add_TS:
+                new_TS.extend(add_TS)
+                new_TS_detail.extend(add_detail)
+                covered |= newly_covered
+                remaining_perms = all_t_perms - covered
 
+        # 5) 兜底：用乘积自动机覆盖剩余 t-perm
+        while remaining_perms:
+            current_constraints = []
+            remaining_list = list(remaining_perms)
+            # 一次打包若干个未覆盖排列（数量不超过 self.N）
+            while len(current_constraints) < self.N and remaining_list:
+                ridx = random.randint(0, len(remaining_list) - 1)
+                p = remaining_list.pop(ridx)
+                constraint_fsm = build_subsequence_mealy_empty_output(self.I, p)
+                # 只保留与更新后的 FSM 有交集的约束
+                if have_intersection(constraint_fsm, self.F):
+                    current_constraints.append(constraint_fsm)
+
+            if not current_constraints:
+                # 没有可交集的约束，跳出避免死循环
+                break
+
+            # 组合：从更新后的 FSM 开始依次相乘
+            combined = copy.deepcopy(self.F)
+            for c in current_constraints:
+                combined = multiply(combined, c)
+
+            try:
+                path_details, test_case = combined.generate_accepting_path()
+            except Exception:
+                # 出错则跳过本轮继续
+                continue
+
+            if test_case:
+                new_TS.append(test_case)
+
+                # 从 path_details 构建 detail 序列
+                detail_sequence = []
+                for step in path_details:
+                    state = step[0]
+                    while isinstance(state, tuple):
+                        state = state[0]
+                    if isinstance(state, str) and state.startswith('S'):
+                        detail_sequence.extend([state, step[1]])
+                if path_details:
+                    final_state = path_details[-1][3]
+                    while isinstance(final_state, tuple):
+                        final_state = final_state[0]
+                    if isinstance(final_state, str) and final_state.startswith('S'):
+                        detail_sequence.append(final_state)
+                new_TS_detail.append(detail_sequence)
+
+                # 更新覆盖与剩余
+                covered |= self.get_covered_permutations(test_case)
+                remaining_perms = all_t_perms - covered
+            # 若未生成 test_case，则继续 while remaining_perms 重试
+
+        # 6) 写回并返回
         self.TS = new_TS
         self.TS_detail = new_TS_detail
         return self.TS
 
     def find_replacements(self, detail_sequence):
-        replacements = []
+        """
+        返回 replacement windows，但基于 inputs 的索引区间：
+        states = [s0, s1, s2, ...]
+        inputs = [a0, a1, ...]  # len(inputs) = len(states)-1
+        若要替换从 states[i] 到 states[j]（j>i），对应 input 的切片是 inputs[i:j]
+        本函数返回 (i, j)，表示 inputs 的切片范围 [i, j)
+        """
         states = []
         inputs = []
-
         for i, elem in enumerate(detail_sequence):
             if i % 2 == 0 or i == len(detail_sequence) - 1:
                 states.append(elem)
             else:
                 inputs.append(elem)
 
-        for i in range(len(states)):
-            if states[i] != self.delta.start_state:
+        replacements = []
+        for si in range(len(states)):
+            if states[si] != self.delta.start_state:
                 continue
-            for j in range(i+1, len(states)):
-                if states[j] == self.delta.end_state:
-                    replacements.append((i, j))
+            for sj in range(si + 1, len(states)):
+                if states[sj] == self.delta.end_state:
+                    # 对应的 inputs 切片是 inputs[si:sj]
+                    replacements.append((si, sj))
         return replacements
 
     def replace_subsequence(self, original_input, start_idx, end_idx):
@@ -437,6 +640,7 @@ class IncrementalTestGenerator(TestGenerator):
         return covered
 
     def generate_remaining_suite(self, remaining_perms):
+        """基于最初未更新的 FSM 生成剩余测试用例"""
         T = remaining_perms.copy()
         TS = []
         TS_detail = []
@@ -447,18 +651,21 @@ class IncrementalTestGenerator(TestGenerator):
                 idx = random.randint(0, len(T)-1)
                 p = T.pop(idx)
                 a = build_subsequence_mealy_empty_output(self.I, p)
-                if have_intersection(a, self.F):
+                # 使用最初未更新的 FSM 检查交集
+                if have_intersection(a, self.initial_fsm):  # 关键修改：使用 self.initial_fsm
                     current_constraints.append(a)
 
             if not current_constraints:
                 continue
 
-            combined = copy.deepcopy(self.F)
+            # 使用最初未更新的 FSM 进行组合
+            combined = copy.deepcopy(self.initial_fsm)  # 关键修改：使用 self.initial_fsm
             for constraint in current_constraints:
                 combined = multiply(combined, constraint)
 
             path_details, test_case = combined.generate_accepting_path()
             if test_case:
+                # 生成详细的路径序列
                 detail_sequence = []
                 for step in path_details:
                     state = step[0]
@@ -472,25 +679,10 @@ class IncrementalTestGenerator(TestGenerator):
                     detail_sequence.append(final_state)
                 TS.append(test_case)
                 TS_detail.append(detail_sequence)
+                # 移除已覆盖的排列
                 T = [p for p in T if not is_subsequence(p, test_case)]
 
         return TS, TS_detail
-
-    def _twise_universe(self):
-        from itertools import permutations
-        return set(permutations(self.I, self.t))
-
-    def _covered_perms(self, suite):
-        from itertools import combinations
-        covered = set()
-        for tc in suite:
-            n = len(tc)
-            for idxs in combinations(range(n), self.t):
-                tup = tuple(tc[i] for i in idxs)
-                if len(set(tup)) == self.t and set(tup).issubset(self.I):
-                    covered.add(tup)
-        return covered
-
 
 def apply_delta_updates(original_fsm, delta):
     new_fsm = copy.deepcopy(original_fsm)
@@ -523,12 +715,15 @@ def apply_delta_updates(original_fsm, delta):
     return new_fsm
 
 
+
+
 import random
 import time
 import gc
 from itertools import permutations
 from multiprocessing import Process, Queue
 import copy
+
 
 
 def build_large_fsm(num_states=20, num_inputs=5, seed=42):
@@ -575,15 +770,17 @@ def build_large_fsm(num_states=20, num_inputs=5, seed=42):
 
     return MealyNFA(set(states), set(inputs), set(outputs), transition_func, initial_state, accepting_states)
 
-def demo_example(num_runs=10):
+
+def demo_example(num_runs=5, max_print=3):
     print("=== Demo Example: Small FSM with Delta Update ===")
 
     noninc_times, noninc_sizes, noninc_lengths = [], [], []
     inc_times, inc_sizes, inc_lengths = [], [], []
 
     for run in range(num_runs):
+        print(f"\n--- Run {run+1} ---")
         # 1️⃣ 构建原始 FSM
-        original_fsm = build_large_fsm(num_states=20, num_inputs=5)
+        original_fsm = build_large_fsm(num_states=10, num_inputs=5)
 
         # 2️⃣ 构建 delta
         delta_transitions = [
@@ -594,7 +791,7 @@ def demo_example(num_runs=10):
         # 3️⃣ 应用 delta 更新 FSM
         new_fsm = apply_delta_updates(original_fsm, delta)
 
-        # 4️⃣ 非增量：在更新后的 FSM 上生成全新测试套件
+        # 4️⃣ 非增量生成
         tg_full = TestGenerator(list(new_fsm.inputs), new_fsm, strength=2, max_tuples=8)
         start_time = time.time()
         TS_full, TS_full_detail = tg_full.generate_test_suite()
@@ -607,7 +804,11 @@ def demo_example(num_runs=10):
         else:
             noninc_lengths.append(0)
 
-        # 5️⃣ 增量：旧 FSM + delta
+        print(f"[非增量] 时间: {time_no_inc:.4f}s, 测试数: {len(TS_full)}, 平均长度: {noninc_lengths[-1]:.2f}")
+        for i, (tc, detail) in enumerate(zip(TS_full[:max_print], TS_full_detail[:max_print])):
+            print(f"  Test {i+1}: Input: {tc}, Detail: {detail}")
+
+        # 5️⃣ 增量生成
         tg_old = TestGenerator(list(original_fsm.inputs), original_fsm, strength=2, max_tuples=8)
         TS_old, TS_old_detail = tg_old.generate_test_suite()
         inc_tg = IncrementalTestGenerator(tg_old, delta, new_fsm)
@@ -622,8 +823,12 @@ def demo_example(num_runs=10):
         else:
             inc_lengths.append(0)
 
+        print(f"[增量]   时间: {time_inc:.4f}s, 测试数: {len(TS_inc)}, 平均长度: {inc_lengths[-1]:.2f}")
+        for i, tc in enumerate(TS_inc[:max_print]):
+            print(f"  Incremental Test {i+1}: Input: {tc}")
+
     # 6️⃣ 输出平均结果
-    print("=== 平均结果 (运行 {} 次) ===".format(num_runs))
+    print("\n=== 平均结果 (运行 {} 次) ===".format(num_runs))
     print(f"[非增量] 平均时间: {sum(noninc_times)/num_runs:.4f}s, "
           f"平均测试数: {sum(noninc_sizes)/num_runs:.2f}, "
           f"平均长度: {sum(noninc_lengths)/num_runs:.2f}")
@@ -632,8 +837,7 @@ def demo_example(num_runs=10):
           f"平均长度: {sum(inc_lengths)/num_runs:.2f}")
 
 
+
 if __name__ == "__main__":
     demo_example(num_runs=10)
-
-
 
